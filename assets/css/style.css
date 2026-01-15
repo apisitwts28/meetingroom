@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Kanit', sans-serif; -webkit-font-smoothing: antialiased; }
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+
+/* Calendar Base */
+.fc { 
+    --fc-border-color: #F3F4F6; 
+    --fc-today-bg-color: transparent;
+    --fc-button-bg-color: #fff;
+    --fc-button-border-color: #E5E7EB;
+    --fc-button-text-color: #374151;
+    --fc-button-active-bg-color: var(--primary);
+    --fc-button-active-border-color: var(--primary);
+}
+
+.fc-toolbar-title { font-size: 1.5rem !important; font-weight: 800 !important; color: #1F2937; letter-spacing: -0.025em; }
+.fc-button { 
+    border-radius: 10px !important; 
+    padding: 8px 16px !important; 
+    font-weight: 600 !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.fc-button-active { color: white !important; }
+
+/* Day Headers */
+.fc-theme-standard th { 
+    border: none !important; 
+    padding: 15px 0 !important; 
+    color: var(--primary); 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+}
+.fc-theme-standard td { border: 1px solid #F9FAFB !important; }
+
+/* Today Marker */
+.fc-day-today { background: #F8FAFC !important; }
+.fc-day-today .fc-daygrid-day-number {
+    background: var(--primary);
+    color: white;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 4px;
+}
+
+/* Event Pills */
+.fc-event {
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 2px 4px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500;
+    margin-bottom: 2px !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* --- Mobile Specific Tweaks --- */
+@media (max-width: 640px) {
+    /* ย่อ Title ปฏิทิน */
+    .fc-toolbar-title { font-size: 1.1rem !important; }
+    
+    /* ปุ่มใน Toolbar เล็กลง */
+    .fc-button { 
+        padding: 6px 10px !important; 
+        font-size: 0.75rem !important; 
+    }
+    
+    /* จัด Toolbar ให้ซ้อนกันถ้าที่มันแคบ */
+    .fc-header-toolbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* ลด Padding ของวัน */
+    .fc-theme-standard th { padding: 8px 0 !important; font-size: 0.7rem; }
+    
+    /* ซ่อนปุ่มที่ไม่จำเป็นในมือถือได้ถ้าต้องการ */
+    /* .fc-today-button { display: none; } */
+}
+
+/* Safe Area */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
